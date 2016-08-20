@@ -32,14 +32,16 @@ foreach ($files as $file) {
     $col->addCSS("$path/$file.less");
 }
 
+$path = CURR_THEME_PATH . 'less';
+
+$col->addCSS("$path/colors.less");
+
 $asset->addCollection($col);
 
-
-$mycol = new \CODOF\Asset\Collection('head_col');
-
+$mycol = new \CODOF\Asset\Collection('head_mycol');
+$mycol->prependURL = CURR_THEME;
 
 $curr_theme_less = array('colors', 'custom');
-$path = CURR_THEME_PATH . 'less';
 
 
 //Add custom less files
